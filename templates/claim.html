@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <h1>Claim items to bring:</h1>
+      <p>(you may claim  more than one item currently)</p>
+  <form method="POST">
+       {# This hidden_tag is a CSRF security feature. #}
+      {{ form.hidden_tag() }}
+      {{ form.you.label }} {{ form.you() }}
+      <p>Items remaining: {{ form.item() }}
+      <p>Choose: {{ form.submit() }}
+  </form>
+</div>
+{% endblock %}

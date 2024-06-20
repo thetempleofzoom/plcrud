@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Welcome to the Potluck Logistics page!</h1>
+<div class="jumbotron">
+    <p></p>
+  <h3>List of all food items and their claimants (if any):</h3>
+    <p></p>
+  <ul>
+    {% for food in allfood  %}
+    <li>{{food}}</li>
+    {% endfor %}
+  </ul>
+    <p></p>
+ <h3>List of guests (Total = {{ totguests }} ):</h3>
+    <p></p>
+  <ul>
+    {% for guest in allguests  %}
+    <li>{{guest}}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <h1>Add a guest to the guest list (or invite yourself)</h1>
+  <form method="POST">
+      {# This hidden_tag is a CSRF security feature. #}
+      {{ form.hidden_tag() }}
+      {{ form.guest_name.label }} {{ form.guest_name() }}
+      <p>
+      {{ form.plusone.label }} {{ form.plusone() }}</p>
+          <p>
+      {{ form.submit() }}</p>
+  </form>
+</div>
+{% endblock %}

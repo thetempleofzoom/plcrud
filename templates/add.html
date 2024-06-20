@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <h1>Have a suggestion for a food item?</h1>
+  <p>Add a new item with the form below:</p>
+  <form method="POST">
+      {# This hidden_tag is a CSRF security feature. #}
+      {{ form.hidden_tag() }}
+      {{ form.item.label }} {{ form.item() }}
+      <p>
+      {{ form.quantity.label }} {{ form.quantity() }}</p>
+          <p>
+      {{ form.submit() }}</p>
+  </form>
+    {% with messages = get_flashed_messages() %}
+   {% if messages %}
+      {% for message in messages %}
+    <b style='color:red;'> {{ message }} </b>
+      {% endfor %}
+   {% endif %}
+{% endwith %}
+</div>
+{% endblock %}
